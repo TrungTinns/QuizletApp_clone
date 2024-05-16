@@ -42,6 +42,10 @@ flutter_lints
 3.1
 file:///C:/Users/User/AppData/Local/Pub/Cache/hosted/pub.dev/flutter_lints-3.0.2/
 file:///C:/Users/User/AppData/Local/Pub/Cache/hosted/pub.dev/flutter_lints-3.0.2/lib/
+intl
+3.0
+file:///C:/Users/User/AppData/Local/Pub/Cache/hosted/pub.dev/intl-0.19.0/
+file:///C:/Users/User/AppData/Local/Pub/Cache/hosted/pub.dev/intl-0.19.0/lib/
 leak_tracker
 3.1
 file:///C:/Users/User/AppData/Local/Pub/Cache/hosted/pub.dev/leak_tracker-10.0.0/
@@ -74,6 +78,10 @@ path
 3.0
 file:///C:/Users/User/AppData/Local/Pub/Cache/hosted/pub.dev/path-1.9.0/
 file:///C:/Users/User/AppData/Local/Pub/Cache/hosted/pub.dev/path-1.9.0/lib/
+simple_gesture_detector
+2.12
+file:///C:/Users/User/AppData/Local/Pub/Cache/hosted/pub.dev/simple_gesture_detector-0.2.1/
+file:///C:/Users/User/AppData/Local/Pub/Cache/hosted/pub.dev/simple_gesture_detector-0.2.1/lib/
 source_span
 2.18
 file:///C:/Users/User/AppData/Local/Pub/Cache/hosted/pub.dev/source_span-1.10.0/
@@ -90,6 +98,10 @@ string_scanner
 2.18
 file:///C:/Users/User/AppData/Local/Pub/Cache/hosted/pub.dev/string_scanner-1.2.0/
 file:///C:/Users/User/AppData/Local/Pub/Cache/hosted/pub.dev/string_scanner-1.2.0/lib/
+table_calendar
+3.0
+file:///C:/Users/User/AppData/Local/Pub/Cache/hosted/pub.dev/table_calendar-3.1.1/
+file:///C:/Users/User/AppData/Local/Pub/Cache/hosted/pub.dev/table_calendar-3.1.1/lib/
 term_glyph
 2.12
 file:///C:/Users/User/AppData/Local/Pub/Cache/hosted/pub.dev/term_glyph-1.2.1/

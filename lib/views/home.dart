@@ -2,8 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:quizlet_flashcard/model/card.dart';
 import 'package:quizlet_flashcard/views/create.dart';
 import 'package:quizlet_flashcard/views/explanation.dart';
+import 'package:quizlet_flashcard/widgets/calendar.dart';
 import 'package:quizlet_flashcard/widgets/colors.dart';
 import 'package:quizlet_flashcard/widgets/widget.dart';
+import 'package:table_calendar/table_calendar.dart';
 
 class HomePage extends StatefulWidget {
     @override
@@ -153,7 +155,7 @@ class HomeScreen extends StatelessWidget {
                 child: Align(
                   alignment: Alignment.centerLeft,
                   child: Text(
-                    'Học phần',
+                    'Recently',
                     style: TextStyle(
                       fontSize: 20,
                       fontWeight: FontWeight.bold,
@@ -180,7 +182,7 @@ class HomeScreen extends StatelessWidget {
                 child: Align(
                   alignment: Alignment.centerLeft,
                   child: Text(
-                    'Học phần',
+                    'Achievement',
                     style: TextStyle(
                       fontSize: 20,
                       fontWeight: FontWeight.bold,
@@ -188,22 +190,11 @@ class HomeScreen extends StatelessWidget {
                   ),
                 ),
               ),
-              Container(
-                height: 100.0,
-                child: ListView(
-                  scrollDirection: Axis.horizontal,
-                  children: <Widget>[
-                    ItemCard(color: Colors.red, text: 'Item 1', width: 120.0, height: 50.0,),
-                    ItemCard(color: Colors.blue, text: 'Item 2', width: 120.0, height: 50.0,),
-                    ItemCard(color: Colors.green, text: 'Item 3', width: 120.0, height: 50.0,),
-                    ItemCard(color: Colors.yellow, text: 'Item 4', width: 120.0, height: 50.0,),
-                    ItemCard(color: Colors.orange, text: 'Item 5', width: 120.0, height: 50.0,),
-                  ],
-                ),
-              ),
+              CalendarFrame(),
             ],
           ),
         ),
+        
       ],
     );
   }

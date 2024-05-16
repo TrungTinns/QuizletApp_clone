@@ -148,7 +148,6 @@ class _SignInState extends State<SignIn> {
                         onPressed:(){
                           Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => HomePage()));
                         },
-                        
                         // onPressed: () async {
                         //   if (emailTextController.text != '' &&
                         //       passwordTextController.text != '') {
