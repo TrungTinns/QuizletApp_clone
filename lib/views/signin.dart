@@ -20,12 +20,7 @@ class _SignInState extends State<SignIn> {
     final passwordTextController = TextEditingController();
 
     return Scaffold(
-      appBar: AppBar(
-        title: appBar(context),
-        centerTitle: true,
-        backgroundColor: Colors.transparent,
-        elevation: 0.0,
-      ),
+      appBar: customAppBar(context),
       resizeToAvoidBottomInset: false,
       backgroundColor: authThemeColor,
       body: Container(

@@ -16,12 +16,7 @@ class _CreateQuizState extends State<CreateQuiz> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: appBar(context),
-        backgroundColor: Colors.transparent,
-        iconTheme: IconThemeData(color: Colors.black87),
-        elevation: 0.0,
-      ),
+      appBar: customAppBar(context),
       backgroundColor: authThemeColor,
       body: Form(
         key: _formkKey,

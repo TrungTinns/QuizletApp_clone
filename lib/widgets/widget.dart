@@ -39,3 +39,13 @@ Widget seachIcon(BuildContext context, String hintText){
           ),
     );
 }
+
+AppBar customAppBar(BuildContext context) {
+  return AppBar(
+    title: appBar(context),
+    backgroundColor: Colors.transparent,
+    iconTheme: IconThemeData(color: Colors.black87),
+    centerTitle: true,
+    elevation: 0.0,
+  );
+}

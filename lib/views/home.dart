@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:quizlet_flashcard/model/card.dart';
 import 'package:quizlet_flashcard/views/create.dart';
 import 'package:quizlet_flashcard/views/explanation.dart';
+import 'package:quizlet_flashcard/views/personal.dart';
 import 'package:quizlet_flashcard/widgets/calendar.dart';
 import 'package:quizlet_flashcard/widgets/colors.dart';
 import 'package:quizlet_flashcard/widgets/widget.dart';
@@ -26,10 +27,7 @@ class _HomePageState extends State<HomePage> {
       'Your Library',
       style: TextStyle(fontSize: 35, fontWeight: FontWeight.bold),
     ),
-    Text(
-      'Personal Page',
-      style: TextStyle(fontSize: 35, fontWeight: FontWeight.bold),
-    ),
+    PersonalPage(),
   ];
 
   void _onItemTapped(int index) {
@@ -49,12 +47,7 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: appBar(context),
-        centerTitle: true,
-        backgroundColor: Colors.transparent,
-        elevation: 0.0,
-      ),
+      appBar: customAppBar(context),
       resizeToAvoidBottomInset: false,
       backgroundColor: authThemeColor,
       body: _widgetOptions.elementAt(_selectedIndex),
@@ -82,7 +75,7 @@ class _HomePageState extends State<HomePage> {
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.account_circle_outlined),
-            label: 'Menu',
+            label: 'Personal',
             backgroundColor: Colors.transparent,
           ),
         ],
@@ -158,6 +151,7 @@ class HomeScreen extends StatelessWidget {
                     'Recently',
                     style: TextStyle(
                       fontSize: 20,
+                      color: Colors.white,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
@@ -185,6 +179,7 @@ class HomeScreen extends StatelessWidget {
                     'Achievement',
                     style: TextStyle(
                       fontSize: 20,
+                      color: Colors.white,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
