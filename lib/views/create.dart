@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:quizlet_flashcard/views/home.dart';
 import 'package:quizlet_flashcard/widgets/colors.dart';
 import '../widgets/widget.dart';
 
@@ -48,7 +49,7 @@ class _CreateQuizState extends State<CreateQuiz> {
                 },
               ),
               Spacer(),
-              blueButton(context, "Create Quiz"),
+              blueButton(context, label: "Create card", navigateTo: HomePage()),
               SizedBox(height: 80,)
             ],
           ),
