@@ -13,9 +13,13 @@ class Calendar extends StatelessWidget {
   final List<dynamic> _selectedEvents = [];
 
   void _onDaySelected(BuildContext context, DateTime day, List<dynamic> events) {
+<<<<<<< HEAD
     Navigator.push(
       context,
       MaterialPageRoute(builder: (context) => Achievement()),
+=======
+    Navigator.push(context, MaterialPageRoute(builder: (context) => Achievement()),
+>>>>>>> main
     );
   }
 

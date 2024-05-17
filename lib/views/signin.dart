@@ -20,12 +20,7 @@ class _SignInState extends State<SignIn> {
     final passwordTextController = TextEditingController();
 
     return Scaffold(
-      appBar: AppBar(
-        title: appBar(context),
-        centerTitle: true,
-        backgroundColor: Colors.transparent,
-        elevation: 0.0,
-      ),
+      appBar: customAppBar(context),
       resizeToAvoidBottomInset: false,
       backgroundColor: authThemeColor,
       body: Container(
@@ -148,7 +143,6 @@ class _SignInState extends State<SignIn> {
                         onPressed:(){
                           Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => HomePage()));
                         },
-                        
                         // onPressed: () async {
                         //   if (emailTextController.text != '' &&
                         //       passwordTextController.text != '') {
@@ -237,7 +231,7 @@ class _SignInState extends State<SignIn> {
                         Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => SignUp()
                         ));
                       },
-                      child: Text("Sign up", style: TextStyle(color: Color.fromARGB(255, 255, 255, 255), fontSize: 16, decoration: TextDecoration.underline)))
+                      child: Text("Sign up", style: TextStyle(color: textColor, fontSize: 16, decoration: TextDecoration.underline)))
                   ],
                 ),
                 SizedBox(height: 80,)
