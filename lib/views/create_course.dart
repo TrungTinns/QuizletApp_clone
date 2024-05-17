@@ -152,7 +152,6 @@ class _CreateCourseState extends State<CreateCourse> {
               buildTermDefinitionContainer(context),
               SizedBox(height: 30),
               blueButton(context, label: "Save", navigateTo: HomePage()),
-              
             ],
           ),
         ),
