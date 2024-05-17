@@ -38,21 +38,3 @@ class _AchievementState extends State<Achievement> {
     );
   }
 }
-
-// class AnotherPage extends StatelessWidget {
-//   final DateTime date;
-
-//   const AnotherPage({required this.date});
-
-//   @override
-//   Widget build(BuildContext context) {
-//     return Scaffold(
-//       appBar: AppBar(
-//         title: Text('Selected Date'),
-//       ),
-//       body: Center(
-//         child: Text('Selected date: ${date.toString().substring(0, 10)}'),
-//       ),
-//     );
-//   }
-// }
