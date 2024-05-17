@@ -19,13 +19,9 @@ class _HomePageState extends State<HomePage> {
   static List<Widget> _widgetOptions = <Widget>[
     HomeScreen(),
     ExplanationPage(),
-    Text(
-      'Create new',
-      style: TextStyle(fontSize: 35, fontWeight: FontWeight.bold),
+    Text('Create new', style: TextStyle(fontSize: 35, fontWeight: FontWeight.bold),
     ),
-    Text(
-      'Your Library',
-      style: TextStyle(fontSize: 35, fontWeight: FontWeight.bold),
+    Text('Your Library', style: TextStyle(fontSize: 35, fontWeight: FontWeight.bold),
     ),
     PersonalPage(),
   ];
@@ -37,9 +33,10 @@ class _HomePageState extends State<HomePage> {
   );
 
   if (index == 2) {
-    Navigator.push(
-      context,
-      MaterialPageRoute(builder: (context) => CreateQuiz()),
+    showModalBottomSheet( context: context,
+            builder: (BuildContext context) {
+              return BottomSheetWidget();
+            },
     );
   }
 }
@@ -195,4 +192,43 @@ class HomeScreen extends StatelessWidget {
   }
 }
 
-
+class BottomSheetWidget extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      height: 200, 
+      color: snackBarColor,
+      child: Column(
+        children: [
+          ListTile(
+            title: Text(
+              'Course',
+              style: TextStyle(color: textColor),
+            ),
+            onTap: () {
+              Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => CreateQuiz()));
+            },
+          ),
+          ListTile(
+            title: Text(
+              'Folder',
+              style: TextStyle(color: textColor),
+            ),
+            onTap: () {
+              Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => CreateQuiz()));
+            },
+          ),
+          ListTile(
+            title: Text(
+              'Class',
+              style: TextStyle(color: textColor),
+            ),
+            onTap: () {
+              Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => CreateQuiz()));
+            },
+          ),
+        ],
+      ),
+    );
+  }
+}
