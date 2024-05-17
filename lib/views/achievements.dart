@@ -26,7 +26,7 @@ class _AchievementState extends State<Achievement> {
               'Your Achievement',
               style: TextStyle(
                 fontSize: 20,
-                color: Colors.white,
+                color: textColor,
                 fontWeight: FontWeight.bold,
               ),
             ),

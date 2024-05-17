@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:quizlet_flashcard/widgets/colors.dart';
 
 class ItemCard extends StatelessWidget {
   final Color color;
@@ -21,7 +22,7 @@ class ItemCard extends StatelessWidget {
         child: Text(
           text,
           style: TextStyle(
-            color: Colors.white,
+            color: textColor,
             fontWeight: FontWeight.bold,
           ),
         ),

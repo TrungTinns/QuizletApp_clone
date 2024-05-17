@@ -231,7 +231,7 @@ class _SignInState extends State<SignIn> {
                         Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => SignUp()
                         ));
                       },
-                      child: Text("Sign up", style: TextStyle(color: Color.fromARGB(255, 255, 255, 255), fontSize: 16, decoration: TextDecoration.underline)))
+                      child: Text("Sign up", style: TextStyle(color: textColor, fontSize: 16, decoration: TextDecoration.underline)))
                   ],
                 ),
                 SizedBox(height: 80,)

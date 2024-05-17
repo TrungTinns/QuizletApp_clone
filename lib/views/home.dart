@@ -94,7 +94,7 @@ class _HomePageState extends State<HomePage> {
             child: Text(
               'Menu',
                 style: TextStyle(
-                  color: Colors.white,
+                  color: textColor,
                   fontSize: 24,
                 ),
               ),
@@ -151,7 +151,7 @@ class HomeScreen extends StatelessWidget {
                     'Recently',
                     style: TextStyle(
                       fontSize: 20,
-                      color: Colors.white,
+                      color: textColor,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
@@ -179,7 +179,7 @@ class HomeScreen extends StatelessWidget {
                     'Achievement',
                     style: TextStyle(
                       fontSize: 20,
-                      color: Colors.white,
+                      color: textColor,
                       fontWeight: FontWeight.bold,
                     ),
                   ),

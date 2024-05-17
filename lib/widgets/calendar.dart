@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:quizlet_flashcard/views/achievements.dart';
+import 'package:quizlet_flashcard/widgets/colors.dart';
 import 'package:table_calendar/table_calendar.dart';
 
 class Calendar extends StatelessWidget {
@@ -38,8 +39,8 @@ class Calendar extends StatelessWidget {
           color: Color.fromARGB(255, 209, 58, 12),
           shape: BoxShape.circle,
         ),
-        todayTextStyle: TextStyle(color: Colors.white),
-        defaultTextStyle: TextStyle(color: Colors.white),
+        todayTextStyle: TextStyle(color: textColor),
+        defaultTextStyle: TextStyle(color: textColor),
         markerDecoration: BoxDecoration(
           color: Colors.green,
           shape: BoxShape.circle,
@@ -48,15 +49,15 @@ class Calendar extends StatelessWidget {
       headerStyle: HeaderStyle(
         titleTextStyle: TextStyle(
           fontSize: 20,
-          color: Colors.white,
+          color: textColor,
         ),
         leftChevronIcon: Icon(
           Icons.chevron_left,
-          color: Colors.white,
+          color: textColor,
         ),
         rightChevronIcon: Icon(
           Icons.chevron_right,
-          color: Colors.white,
+          color: textColor,
         ),
       ),
     );
@@ -86,7 +87,7 @@ class CalendarFrame extends StatelessWidget {
               child: IconButton(
                 iconSize: 100,
                 icon: Icon(Icons.calendar_month),
-                color: Colors.white,
+                color: textColor,
                 onPressed: () {
                   Navigator.push(context,MaterialPageRoute(builder: (context) => Achievement()));
                 },
@@ -98,7 +99,7 @@ class CalendarFrame extends StatelessWidget {
                     'Work Harder!!!', 
                     style: TextStyle(
                       fontSize: 20,
-                      color: Colors.white
+                      color: textColor
                     ),
                   ),
             ),

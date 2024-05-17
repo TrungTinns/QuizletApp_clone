@@ -33,7 +33,7 @@ class _PersonalPageState extends State<PersonalPage> {
               'Username',
               style: TextStyle(
               fontSize: 16,
-              color: Colors.white,),
+              color: textColor,),
             ),
             SizedBox(height: 30),
             GestureDetector(
@@ -54,7 +54,7 @@ class _PersonalPageState extends State<PersonalPage> {
                     IconButton(
                       iconSize: 40,
                       icon: Icon(Icons.settings_suggest_outlined),
-                      color: Colors.white,
+                      color: textColor,
                       onPressed: () {
                         Navigator.push(context,MaterialPageRoute(builder: (context) => MySettings()));
                       },
@@ -63,7 +63,7 @@ class _PersonalPageState extends State<PersonalPage> {
                       'Your Settings',
                       style: TextStyle(
                         fontSize: 20,
-                        color: Colors.white,
+                        color: textColor,
                       ),
                     ),
                   ],
@@ -79,7 +79,7 @@ class _PersonalPageState extends State<PersonalPage> {
                     'Achievement',
                     style: TextStyle(
                       fontSize: 20,
-                      color: Colors.white,
+                      color: textColor,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
