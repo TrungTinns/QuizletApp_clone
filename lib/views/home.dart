@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:quizlet_flashcard/model/card.dart';
-import 'package:quizlet_flashcard/views/create.dart';
+import 'package:quizlet_flashcard/views/create_class.dart';
+import 'package:quizlet_flashcard/views/create_course.dart';
+import 'package:quizlet_flashcard/views/create_folder.dart';
 import 'package:quizlet_flashcard/views/explanation.dart';
 import 'package:quizlet_flashcard/views/personal.dart';
 import 'package:quizlet_flashcard/widgets/calendar.dart';
@@ -206,7 +208,7 @@ class BottomSheetWidget extends StatelessWidget {
               style: TextStyle(color: textColor),
             ),
             onTap: () {
-              Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => CreateQuiz()));
+              Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => CreateCourse()));
             },
           ),
           ListTile(
@@ -215,7 +217,7 @@ class BottomSheetWidget extends StatelessWidget {
               style: TextStyle(color: textColor),
             ),
             onTap: () {
-              Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => CreateQuiz()));
+              Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => CreateFolder()));
             },
           ),
           ListTile(
@@ -224,7 +226,7 @@ class BottomSheetWidget extends StatelessWidget {
               style: TextStyle(color: textColor),
             ),
             onTap: () {
-              Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => CreateQuiz()));
+              Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => CreateClass()));
             },
           ),
         ],
