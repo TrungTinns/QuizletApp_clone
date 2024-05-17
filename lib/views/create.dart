@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:quizlet_flashcard/views/home.dart';
 import 'package:quizlet_flashcard/widgets/colors.dart';
 import '../widgets/widget.dart';
 
@@ -16,12 +17,7 @@ class _CreateQuizState extends State<CreateQuiz> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: appBar(context),
-        backgroundColor: Colors.transparent,
-        iconTheme: IconThemeData(color: Colors.black87),
-        elevation: 0.0,
-      ),
+      appBar: customAppBar(context),
       backgroundColor: authThemeColor,
       body: Form(
         key: _formkKey,
@@ -53,7 +49,7 @@ class _CreateQuizState extends State<CreateQuiz> {
                 },
               ),
               Spacer(),
-              blueButton(context, "Create Quiz"),
+              blueButton(context, label: "Create card", navigateTo: HomePage()),
               SizedBox(height: 80,)
             ],
           ),

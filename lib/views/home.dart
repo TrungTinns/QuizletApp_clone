@@ -2,8 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:quizlet_flashcard/model/card.dart';
 import 'package:quizlet_flashcard/views/create.dart';
 import 'package:quizlet_flashcard/views/explanation.dart';
+import 'package:quizlet_flashcard/views/personal.dart';
+import 'package:quizlet_flashcard/widgets/calendar.dart';
 import 'package:quizlet_flashcard/widgets/colors.dart';
 import 'package:quizlet_flashcard/widgets/widget.dart';
+import 'package:table_calendar/table_calendar.dart';
 
 class HomePage extends StatefulWidget {
     @override
@@ -24,10 +27,7 @@ class _HomePageState extends State<HomePage> {
       'Your Library',
       style: TextStyle(fontSize: 35, fontWeight: FontWeight.bold),
     ),
-    Text(
-      'Personal Page',
-      style: TextStyle(fontSize: 35, fontWeight: FontWeight.bold),
-    ),
+    PersonalPage(),
   ];
 
   void _onItemTapped(int index) {
@@ -47,12 +47,7 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: appBar(context),
-        centerTitle: true,
-        backgroundColor: Colors.transparent,
-        elevation: 0.0,
-      ),
+      appBar: customAppBar(context),
       resizeToAvoidBottomInset: false,
       backgroundColor: authThemeColor,
       body: _widgetOptions.elementAt(_selectedIndex),
@@ -80,7 +75,7 @@ class _HomePageState extends State<HomePage> {
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.account_circle_outlined),
-            label: 'Menu',
+            label: 'Personal',
             backgroundColor: Colors.transparent,
           ),
         ],
@@ -99,7 +94,7 @@ class _HomePageState extends State<HomePage> {
             child: Text(
               'Menu',
                 style: TextStyle(
-                  color: Colors.white,
+                  color: textColor,
                   fontSize: 24,
                 ),
               ),
@@ -153,9 +148,10 @@ class HomeScreen extends StatelessWidget {
                 child: Align(
                   alignment: Alignment.centerLeft,
                   child: Text(
-                    'Học phần',
+                    'Recently',
                     style: TextStyle(
                       fontSize: 20,
+                      color: textColor,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
@@ -180,30 +176,20 @@ class HomeScreen extends StatelessWidget {
                 child: Align(
                   alignment: Alignment.centerLeft,
                   child: Text(
-                    'Học phần',
+                    'Achievement',
                     style: TextStyle(
                       fontSize: 20,
+                      color: textColor,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
                 ),
               ),
-              Container(
-                height: 100.0,
-                child: ListView(
-                  scrollDirection: Axis.horizontal,
-                  children: <Widget>[
-                    ItemCard(color: Colors.red, text: 'Item 1', width: 120.0, height: 50.0,),
-                    ItemCard(color: Colors.blue, text: 'Item 2', width: 120.0, height: 50.0,),
-                    ItemCard(color: Colors.green, text: 'Item 3', width: 120.0, height: 50.0,),
-                    ItemCard(color: Colors.yellow, text: 'Item 4', width: 120.0, height: 50.0,),
-                    ItemCard(color: Colors.orange, text: 'Item 5', width: 120.0, height: 50.0,),
-                  ],
-                ),
-              ),
+              CalendarFrame(),
             ],
           ),
         ),
+        
       ],
     );
   }
