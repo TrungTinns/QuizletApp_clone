@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:quizlet_flashcard/model/card.dart';
-import 'package:quizlet_flashcard/views/create.dart';
+import 'package:quizlet_flashcard/views/create_course.dart';
 import 'package:quizlet_flashcard/views/home.dart';
 import 'package:quizlet_flashcard/views/settings.dart';
 import 'package:quizlet_flashcard/widgets/calendar.dart';
