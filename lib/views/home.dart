@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:quizlet_flashcard/components/calendar.dart';
 import 'package:quizlet_flashcard/model/card.dart';
 import 'package:quizlet_flashcard/views/create_class.dart';
 import 'package:quizlet_flashcard/views/create_course.dart';
 import 'package:quizlet_flashcard/views/create_folder.dart';
-import 'package:quizlet_flashcard/views/explanation.dart';
-import 'package:quizlet_flashcard/views/personal.dart';
-import 'package:quizlet_flashcard/widgets/calendar.dart';
+import 'package:quizlet_flashcard/views/explaination/explanation.dart';
+import 'package:quizlet_flashcard/views/profile/personal.dart';
 import 'package:quizlet_flashcard/widgets/colors.dart';
 import 'package:quizlet_flashcard/widgets/widget.dart';
 import 'package:table_calendar/table_calendar.dart';

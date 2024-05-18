@@ -1,5 +1,5 @@
-import 'package:quizlet_flashcard/views/home.dart';
-import 'package:quizlet_flashcard/views/signin.dart';
+import 'package:quizlet_flashcard/views/home/home.dart';
+import 'package:quizlet_flashcard/views/login/signin.dart';
 import 'package:flutter/material.dart';
 
 void main() {
