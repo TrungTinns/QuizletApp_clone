@@ -3,7 +3,9 @@ import 'package:quizlet_flashcard/views/create/create_class.dart';
 import 'package:quizlet_flashcard/views/create/create_course.dart';
 import 'package:quizlet_flashcard/views/create/create_folder.dart';
 import 'package:quizlet_flashcard/views/home/home.dart';
+import 'package:quizlet_flashcard/views/library/classpage.dart';
 import 'package:quizlet_flashcard/views/library/coursepage.dart';
+import 'package:quizlet_flashcard/views/library/folderpage.dart';
 import 'package:quizlet_flashcard/widgets/colors.dart';
 import '../../widgets/widget.dart';
 
@@ -86,26 +88,3 @@ class _LibraryPageState extends State<LibraryPage> {
   }
 }
 
-class ClassPage extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Center(
-      child: Text(
-        'Class Page',
-        style: TextStyle(color: textColor, fontSize: 24),
-      ),
-    );
-  }
-}
-
-class FolderPage extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Center(
-      child: Text(
-        'Folder Page',
-        style: TextStyle(color: textColor, fontSize: 24),
-      ),
-    );
-  }
-}

@@ -137,7 +137,6 @@ Widget settingButton(BuildContext context, {IconData? icon, required Widget navi
   );
 }
 
-
 Widget courseWidget(BuildContext context, {required String course, bool folder = false, bool options = false}) {
   int term = 70;
     
