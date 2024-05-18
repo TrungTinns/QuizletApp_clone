@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:quizlet_flashcard/views/home.dart';
+import 'package:quizlet_flashcard/views/home/home.dart';
 import 'package:quizlet_flashcard/widgets/colors.dart';
 import '../widgets/widget.dart';
 

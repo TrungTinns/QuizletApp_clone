@@ -3,6 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:quizlet_flashcard/model/card.dart';
 import 'package:quizlet_flashcard/components/create.dart';
+import 'package:quizlet_flashcard/views/create_class.dart';
+import 'package:quizlet_flashcard/views/create_course.dart';
+import 'package:quizlet_flashcard/views/create_folder.dart';
 import 'package:quizlet_flashcard/views/detailed_course/detailed_course.dart';
 import 'package:quizlet_flashcard/views/explaination/explanation.dart';
 import 'package:quizlet_flashcard/views/profile/personal.dart';
@@ -86,6 +89,53 @@ class _HomePageState extends State<HomePage> {
         currentIndex: _selectedIndex,
         selectedItemColor: Colors.white,
         onTap: _onItemTapped,
+      ),
+      drawer: Drawer(
+        child: ListView(
+          padding: EdgeInsets.zero,
+          children: <Widget>[
+            DrawerHeader(
+              decoration: BoxDecoration(
+                color: authThemeColor,
+              ),
+            child: Text(
+              'Menu',
+                style: TextStyle(
+                  color: textColor,
+                  fontSize: 24,
+                ),
+              ),
+            ),
+            ListTile(
+              title: Text('Explanation'),
+              onTap: () {
+                Navigator.pop(context);
+                _onItemTapped(1); 
+              }
+            ),
+            ListTile(
+              title: Text('Create'),
+              onTap: () {
+                Navigator.pop(context);
+                _onItemTapped(2); 
+              }
+            ),
+            ListTile(
+              title: Text('Library'),
+              onTap: () {
+                Navigator.pop(context);
+                _onItemTapped(3); 
+              }
+            ),
+            ListTile(
+              title: Text('Personal Page'),
+              onTap: () {
+                Navigator.pop(context);
+                _onItemTapped(4); 
+              }
+            ),
+          ],
+        ),
       ),
     );
   }
@@ -320,7 +370,7 @@ class BottomSheetWidget extends StatelessWidget {
               style: TextStyle(color: textColor),
             ),
             onTap: () {
-              Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => CreateQuiz()));
+              Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => CreateCourse()));
             },
           ),
           ListTile(
@@ -329,7 +379,7 @@ class BottomSheetWidget extends StatelessWidget {
               style: TextStyle(color: textColor),
             ),
             onTap: () {
-              Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => CreateQuiz()));
+              Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => CreateFolder()));
             },
           ),
           ListTile(
@@ -338,7 +388,7 @@ class BottomSheetWidget extends StatelessWidget {
               style: TextStyle(color: textColor),
             ),
             onTap: () {
-              Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => CreateQuiz()));
+              Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => CreateClass()));
             },
           ),
         ],
