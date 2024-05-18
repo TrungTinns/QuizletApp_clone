@@ -23,13 +23,7 @@ class _HomePageState extends State<HomePage> {
     ExplanationPage(),
     Text('Create new', style: TextStyle(fontSize: 35, fontWeight: FontWeight.bold),
     ),
-<<<<<<< HEAD
-    Text(
-      'Your Library',
-      style: TextStyle(fontSize: 35, fontWeight: FontWeight.bold),
-=======
     Text('Your Library', style: TextStyle(fontSize: 35, fontWeight: FontWeight.bold),
->>>>>>> main
     ),
     PersonalPage(),
   ];
