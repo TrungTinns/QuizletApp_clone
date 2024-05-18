@@ -3,11 +3,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:quizlet_flashcard/model/card.dart';
 import 'package:quizlet_flashcard/components/create.dart';
-import 'package:quizlet_flashcard/views/create_class.dart';
-import 'package:quizlet_flashcard/views/create_course.dart';
-import 'package:quizlet_flashcard/views/create_folder.dart';
+import 'package:quizlet_flashcard/views/create/create_class.dart';
+import 'package:quizlet_flashcard/views/create/create_course.dart';
+import 'package:quizlet_flashcard/views/create/create_folder.dart';
 import 'package:quizlet_flashcard/views/detailed_course/detailed_course.dart';
 import 'package:quizlet_flashcard/views/explaination/explanation.dart';
+import 'package:quizlet_flashcard/views/library/library.dart';
 import 'package:quizlet_flashcard/views/profile/personal.dart';
 import 'package:quizlet_flashcard/components/calendar.dart';
 import 'package:quizlet_flashcard/widgets/colors.dart';
@@ -29,10 +30,7 @@ class _HomePageState extends State<HomePage> {
       'Create new',
       style: TextStyle(fontSize: 35, fontWeight: FontWeight.bold),
     ),
-    Text(
-      'Your Library',
-      style: TextStyle(fontSize: 35, fontWeight: FontWeight.bold),
-    ),
+    LibraryPage(),
     PersonalPage(),
   ];
 
@@ -149,85 +147,6 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   List<String> courses = ["1", "2", "3", "4", "5", "6"];
 
-  Widget _coursesToWidget(String course, bool folder, bool options) {
-    int vocabulary = 70;
-    
-    return InkWell(
-      child: Card(
-        elevation: 4.0,
-        margin: EdgeInsets.all(16.0),
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(10.0),
-        ),
-        child: Container(
-          height: 180,
-          width: 400,
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              folder?
-              Container(
-                padding: const EdgeInsets.only(left: 16.0, right: 16, top: 8),
-                child: Icon(
-                  Icons.folder
-                )
-              ) :
-              Container(),
-              Container(
-                padding: const EdgeInsets.only(left: 16.0, right: 16, top: 8),
-                child: Text(
-                  course,
-                  style: TextStyle(
-                    fontSize: 20.0,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-              ),
-              
-              SizedBox(height: 8.0),
-              !folder?
-              Container(
-                padding: const EdgeInsets.only(left: 16.0, right: 16),
-                child: Text(
-                  vocabulary.toString() + " terms",
-                  style: TextStyle(
-                    fontSize: 16.0,
-                    color: Colors.grey[600],
-                  ),
-                ),
-              ) :
-              Container(),
-              SizedBox(height: 16.0),
-              ListTile(
-                leading: CircleAvatar(
-                  radius: 16,
-                ),
-                title: Text(
-                  "User",
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 14,
-                    color: Colors.black,
-                  ),
-                ),
-                trailing: options ?  IconButton(onPressed: () {}, icon: Icon(Icons.more_vert)) : null,
-              ),
-            ],
-          ),
-        ),
-        
-      ),
-      onTap: () {
-        if (!folder) {
-          Navigator.push(
-            context,
-            MaterialPageRoute(builder: (context) => DetailedCourses(course: course))
-          );
-        }
-      },
-    );
-  }
-
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
@@ -281,7 +200,12 @@ class _HomeScreenState extends State<HomeScreen> {
               scrollDirection: Axis.horizontal,
               shrinkWrap: true,
               itemCount: courses.length,
-              itemBuilder: (ct, idx) => _coursesToWidget(courses[idx], false, false),
+              itemBuilder: (ct, idx) => courseWidget(
+                    context,
+                    course: courses[idx],
+                    folder: false,
+                    options: false,
+                  ),
             ),
           ),
           SizedBox(height: 16.0),
@@ -309,7 +233,12 @@ class _HomeScreenState extends State<HomeScreen> {
               scrollDirection: Axis.horizontal,
               shrinkWrap: true,
               itemCount: courses.length,
-              itemBuilder: (ct, idx) => _coursesToWidget(courses[idx], false, true),
+              itemBuilder: (ct, idx) => courseWidget(
+                    context,
+                    course: courses[idx],
+                    folder: false,
+                    options: true,
+                  ),
             ),
           ),
           SizedBox(height: 16.0),
@@ -346,7 +275,12 @@ class _HomeScreenState extends State<HomeScreen> {
               scrollDirection: Axis.horizontal,
               shrinkWrap: true,
               itemCount: courses.length,
-              itemBuilder: (ct, idx) => _coursesToWidget(courses[idx], true, true),
+              itemBuilder: (ct, idx) => courseWidget(
+                    context,
+                    course: courses[idx],
+                    folder: true,
+                    options: true,
+                  ),
             ),
           ),
           SizedBox(height: 16.0),
