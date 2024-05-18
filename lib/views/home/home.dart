@@ -147,8 +147,6 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   List<String> courses = ["Testing course 1", "Testing course 2", "Testing course 3", "Testing course 4", "Testing course 5", "Testing course 6"];
 
-<<<<<<< HEAD
-=======
   Widget _coursesToWidget(String course, bool folder, bool options) {
     int vocabulary = 70;
     
@@ -228,7 +226,6 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 
->>>>>>> tien
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
