@@ -97,18 +97,18 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  List<String> courses = ["1", "2", "3", "4", "5", "6"];
+  List<String> courses = ["Testing course 1", "Testing course 2", "Testing course 3", "Testing course 4", "Testing course 5", "Testing course 6"];
 
   Widget _coursesToWidget(String course, bool folder, bool options) {
     int vocabulary = 70;
     
-    return InkWell(
-      child: Card(
-        elevation: 4.0,
-        margin: EdgeInsets.all(16.0),
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(10.0),
-        ),
+    return Card(
+      elevation: 4.0,
+      margin: EdgeInsets.all(16.0),
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(10.0),
+      ),
+      child: InkWell(
         child: Container(
           height: 180,
           width: 400,
@@ -165,9 +165,7 @@ class _HomeScreenState extends State<HomeScreen> {
             ],
           ),
         ),
-        
-      ),
-      onTap: () {
+        onTap: () {
         if (!folder) {
           Navigator.push(
             context,
@@ -175,6 +173,8 @@ class _HomeScreenState extends State<HomeScreen> {
           );
         }
       },
+      ),
+      
     );
   }
 
