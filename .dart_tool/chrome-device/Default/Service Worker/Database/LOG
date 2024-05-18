@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 2024/05/19-01:05:59.592 5ba4 Reusing MANIFEST C:\Users\User\AppData\Local\Temp\flutter_tools.26827f5d\flutter_tools_chrome_device.40b025b\Default\Service Worker\Database/MANIFEST-000001
 2024/05/19-01:05:59.593 5ba4 Recovering log #3
 2024/05/19-01:05:59.593 5ba4 Reusing old log C:\Users\User\AppData\Local\Temp\flutter_tools.26827f5d\flutter_tools_chrome_device.40b025b\Default\Service Worker\Database/000003.log 
@@ -7,3 +8,8 @@
 2024/05/18-22:05:14.187 9b8 Recovering log #3
 2024/05/18-22:05:14.189 9b8 Reusing old log C:\Users\Admin\AppData\Local\Temp\flutter_tools.5d5c7583\flutter_tools_chrome_device.c6234631\Default\Service Worker\Database/000003.log 
 >>>>>>> tien
+=======
+2024/05/19-00:27:15.878 545c Reusing MANIFEST C:\Users\User\AppData\Local\Temp\flutter_tools.689dfacb\flutter_tools_chrome_device.5e0240d1\Default\Service Worker\Database/MANIFEST-000001
+2024/05/19-00:27:15.899 545c Recovering log #3
+2024/05/19-00:27:15.900 545c Reusing old log C:\Users\User\AppData\Local\Temp\flutter_tools.689dfacb\flutter_tools_chrome_device.5e0240d1\Default\Service Worker\Database/000003.log 
+>>>>>>> tin

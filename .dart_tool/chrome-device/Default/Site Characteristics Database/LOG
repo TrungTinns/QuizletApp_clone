@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 2024/05/19-01:05:59.560 5024 Reusing MANIFEST C:\Users\User\AppData\Local\Temp\flutter_tools.26827f5d\flutter_tools_chrome_device.40b025b\Default\Site Characteristics Database/MANIFEST-000001
 2024/05/19-01:05:59.571 5024 Recovering log #6
 2024/05/19-01:05:59.572 5024 Reusing old log C:\Users\User\AppData\Local\Temp\flutter_tools.26827f5d\flutter_tools_chrome_device.40b025b\Default\Site Characteristics Database/000006.log 
@@ -9,3 +10,9 @@
 2024/05/18-22:05:14.192 994 Reusing old log C:\Users\Admin\AppData\Local\Temp\flutter_tools.5d5c7583\flutter_tools_chrome_device.c6234631\Default\Site Characteristics Database/000006.log 
 2024/05/18-22:05:14.193 994 Delete type=0 #3
 >>>>>>> tien
+=======
+2024/05/19-00:27:15.882 54e4 Reusing MANIFEST C:\Users\User\AppData\Local\Temp\flutter_tools.689dfacb\flutter_tools_chrome_device.5e0240d1\Default\Site Characteristics Database/MANIFEST-000001
+2024/05/19-00:27:15.899 54e4 Recovering log #6
+2024/05/19-00:27:15.900 54e4 Reusing old log C:\Users\User\AppData\Local\Temp\flutter_tools.689dfacb\flutter_tools_chrome_device.5e0240d1\Default\Site Characteristics Database/000006.log 
+2024/05/19-00:27:15.901 54e4 Delete type=0 #3
+>>>>>>> tin
