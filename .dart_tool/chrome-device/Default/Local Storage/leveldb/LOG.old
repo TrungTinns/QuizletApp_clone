@@ -1,3 +1,15 @@
+<<<<<<< HEAD
+<<<<<<< HEAD
+2024/05/19-00:27:16.209 3d7c Reusing MANIFEST C:\Users\User\AppData\Local\Temp\flutter_tools.689dfacb\flutter_tools_chrome_device.5e0240d1\Default\Local Storage\leveldb/MANIFEST-000001
+2024/05/19-00:27:16.213 3d7c Recovering log #3
+2024/05/19-00:27:16.217 3d7c Reusing old log C:\Users\User\AppData\Local\Temp\flutter_tools.689dfacb\flutter_tools_chrome_device.5e0240d1\Default\Local Storage\leveldb/000003.log 
+=======
+2024/05/18-21:09:26.280 690 Reusing MANIFEST C:\Users\Admin\AppData\Local\Temp\flutter_tools.6c1b19e4\flutter_tools_chrome_device.c184f35f\Default\Local Storage\leveldb/MANIFEST-000001
+2024/05/18-21:09:26.282 690 Recovering log #3
+2024/05/18-21:09:26.288 690 Reusing old log C:\Users\Admin\AppData\Local\Temp\flutter_tools.6c1b19e4\flutter_tools_chrome_device.c184f35f\Default\Local Storage\leveldb/000003.log 
+>>>>>>> tien
+=======
 2024/05/18-22:16:20.243 4a9c Reusing MANIFEST C:\Users\User\AppData\Local\Temp\flutter_tools.4a44c71d\flutter_tools_chrome_device.ea02fb66\Default\Local Storage\leveldb/MANIFEST-000001
 2024/05/18-22:16:20.247 4a9c Recovering log #3
 2024/05/18-22:16:20.250 4a9c Reusing old log C:\Users\User\AppData\Local\Temp\flutter_tools.4a44c71d\flutter_tools_chrome_device.ea02fb66\Default\Local Storage\leveldb/000003.log 
+>>>>>>> tin
