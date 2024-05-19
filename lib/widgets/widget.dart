@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:quizlet_flashcard/views/detailed_course/detailed_course.dart';
-import 'package:quizlet_flashcard/views/detailed_course/detailfolder.dart';
 import 'package:quizlet_flashcard/views/register/signup.dart';
 import 'package:quizlet_flashcard/views/settings/settings.dart';
 import 'package:quizlet_flashcard/views/login/signin.dart';
@@ -213,12 +212,12 @@ Widget courseWidget(BuildContext context, {required String course, bool folder =
             MaterialPageRoute(builder: (context) => DetailedCourses(course: course))
           );
         }
-        else(){
-          Navigator.push(
+        else {
+           Navigator.push(
             context,
             MaterialPageRoute(builder: (context) => SignUp())
           );
-        };
+        }
       },
     );
   }      

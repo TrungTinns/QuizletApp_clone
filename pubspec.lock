@@ -17,14 +17,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.1.1"
-  card_slider:
+  carousel_slider:
     dependency: "direct main"
     description:
-      name: card_slider
-      sha256: "3d8db347a7cb3ac3f30f4169d74282d0976f42de2615d4ca4c0038dd3e56646b"
+      name: carousel_slider
+      sha256: "9c695cc963bf1d04a47bd6021f68befce8970bcd61d24938e1fb0918cf5d9c42"
       url: "https://pub.dev"
     source: hosted
-    version: "1.0.5"
+    version: "4.2.1"
   characters:
     dependency: transitive
     description:
