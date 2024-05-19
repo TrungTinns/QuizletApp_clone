@@ -14,10 +14,10 @@
       "languageVersion": "2.17"
     },
     {
-      "name": "card_slider",
-      "rootUri": "file:///C:/Users/User/AppData/Local/Pub/Cache/hosted/pub.dev/card_slider-1.0.5",
+      "name": "carousel_slider",
+      "rootUri": "file:///C:/Users/User/AppData/Local/Pub/Cache/hosted/pub.dev/carousel_slider-4.2.1",
       "packageUri": "lib/",
-      "languageVersion": "2.18"
+      "languageVersion": "2.12"
     },
     {
       "name": "characters",
@@ -200,7 +200,7 @@
       "languageVersion": "3.3"
     }
   ],
-  "generated": "2024-05-19T03:23:51.828514Z",
+  "generated": "2024-05-19T06:17:27.517686Z",
   "generator": "pub",
   "generatorVersion": "3.3.4"
 }

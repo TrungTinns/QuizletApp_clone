@@ -1,8 +1,10 @@
 
 import 'dart:js_interop';
-import 'package:card_slider/card_slider.dart';
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:quizlet_flashcard/model/quiz/quiz.dart';
+import 'package:quizlet_flashcard/views/learning/flashcard.dart';
+import 'package:quizlet_flashcard/views/learning/quiz.dart';
 import 'package:quizlet_flashcard/widgets/colors.dart';
 import 'package:quizlet_flashcard/widgets/widget.dart';
 
@@ -17,11 +19,12 @@ class DetailedCourses extends StatefulWidget {
 class _MyWidgetState extends State<DetailedCourses> {
   List<Quiz> quizz= [];
 
+
   Widget _quizToWidget(Quiz quiz) {
     List<String> answers = quiz.incorrect_answer;
     answers.add(quiz.correct_answer);
     answers.shuffle();
-    
+
     return Container(
       child: Card(
         child: Padding(
@@ -59,7 +62,10 @@ class _MyWidgetState extends State<DetailedCourses> {
                 children: [
                   IconButton(
                     onPressed: (){
-                      print("Hi");
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => FlashCardScreen(quizz: quizz,))
+                      );
                     }, 
                     icon: Icon(Icons.fullscreen)
                   )
@@ -226,11 +232,15 @@ class _MyWidgetState extends State<DetailedCourses> {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            CardSlider(
-              cards: quizz.map((e) => _quizToWidget(e)).toList(),
-              bottomOffset: .0005,
-              cardHeight: 0.75,
-              itemDotOffset: 0.25,
+            CarouselSlider(
+              items: quizz.map((e) => _quizToWidget(e)).toList(),
+              options: CarouselOptions(
+                height: 400,
+                enlargeCenterPage: true,
+                enableInfiniteScroll: false,
+                initialPage: 0,
+                autoPlay: false,
+              ),
             ),
             Padding(
               padding: EdgeInsets.only(left: 8.0),
@@ -306,7 +316,12 @@ class _MyWidgetState extends State<DetailedCourses> {
                         fontWeight: FontWeight.bold,
                       ),
                     ),
-                    onTap: (){},
+                    onTap: (){
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => FlashCardScreen(quizz: quizz,))
+                      );
+                    },
                   ),
                 ),
                 Card(
@@ -323,7 +338,12 @@ class _MyWidgetState extends State<DetailedCourses> {
                         fontWeight: FontWeight.bold,
                       ),
                     ),
-                    onTap: (){},
+                    onTap: (){
+                       Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => QuizScreen(quizz: quizz,))
+                      );
+                    },
                   ),
                 ),
                 Card(
