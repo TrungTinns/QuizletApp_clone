@@ -16,7 +16,7 @@ Widget FlashcardWidget(BuildContext context, {
       child: FlipCard(
         key: cardKey,
         flipOnTouch: true,
-        direction: FlipDirection.VERTICAL, 
+        direction: FlipDirection.HORIZONTAL, 
         front: _buildCardSide(frontContent),
         back: _buildCardSide(backContent),
       ),
