@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:quizlet_flashcard/views/detailed_course/detailed_course.dart';
 import 'package:quizlet_flashcard/views/detailedfolder/detailfolder.dart';
-import 'package:quizlet_flashcard/views/register/signup.dart';
-import 'package:quizlet_flashcard/views/settings/settings.dart';
-import 'package:quizlet_flashcard/views/login/signin.dart';
 import 'package:quizlet_flashcard/widgets/colors.dart';
 
 Widget appBar(BuildContext context) {

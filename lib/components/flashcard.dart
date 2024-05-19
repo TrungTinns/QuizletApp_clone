@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flip_card/flip_card.dart';
-import 'package:flutter/widgets.dart';
+import 'package:quizlet_flashcard/services/helper.dart';
 
 Widget FlashcardWidget(BuildContext context, {
   Key? key,
@@ -38,7 +38,9 @@ Widget _buildCardSide(String text, BuildContext context) {
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
                 IconButton(
-                  onPressed: (){}, 
+                  onPressed: (){
+                    toggleTextToSpeech(text);
+                  }, 
                   icon: Icon(Icons.volume_down_outlined))
               ],
             ),
