@@ -1,5 +1,4 @@
 import 'dart:math';
-
 import 'package:flutter/material.dart';
 import 'package:quizlet_flashcard/model/quiz.dart';
 import 'package:quizlet_flashcard/widgets/colors.dart';
@@ -82,6 +81,26 @@ class _QuizScreenState extends State<QuizScreen> {
     );
   }
 
+  void _showCompletionDialog(BuildContext context) {
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: Text('Congratulations!'),
+          content: Text('You have answered $_correctAnswerCount out of ${widget.quizz.length} questions correctly.'),
+          actions: [
+            TextButton(
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+              child: Text('OK'),
+            ),
+          ],
+        );
+      },
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -132,11 +151,10 @@ class _QuizScreenState extends State<QuizScreen> {
                 onPressed: (){
                   setState(() {
                     if (_currIdx < widget.quizz.length - 1) {
-                      _currIdx +=1;
+                      _currIdx += 1;
                       _resetQuiz();
                     } else {
-                      // Thay đổi chức năng khi đạt đến cuối danh sách câu hỏi
-                      // Ở đây, bạn có thể thực hiện hành động mà bạn muốn khi nhấn vào nút "Done"
+                      _showCompletionDialog(context); // Hiển thị popup khi hoàn thành
                     }
                   });
                 }, 
@@ -153,7 +171,6 @@ class _QuizScreenState extends State<QuizScreen> {
                 )
               ) : SizedBox.shrink(),
             ),
-
           ],
         ),
       ),
