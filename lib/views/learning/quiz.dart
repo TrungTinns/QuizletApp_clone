@@ -1,7 +1,7 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
-import 'package:quizlet_flashcard/model/quiz/quiz.dart';
+import 'package:quizlet_flashcard/model/quiz.dart';
 import 'package:quizlet_flashcard/widgets/colors.dart';
 import 'package:quizlet_flashcard/widgets/widget.dart';
 

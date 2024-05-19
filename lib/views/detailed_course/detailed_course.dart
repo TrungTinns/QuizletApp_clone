@@ -2,7 +2,7 @@
 import 'dart:js_interop';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
-import 'package:quizlet_flashcard/model/quiz/quiz.dart';
+import 'package:quizlet_flashcard/model/quiz.dart';
 import 'package:quizlet_flashcard/views/learning/flashcard.dart';
 import 'package:quizlet_flashcard/views/learning/quiz.dart';
 import 'package:quizlet_flashcard/views/learning/typing.dart';
@@ -101,7 +101,6 @@ class _MyWidgetState extends State<DetailedCourses> {
             "1800's",
             "history"
         ], 
-         difficulty: "hard"
       )
     );
     quizz.add(
@@ -121,7 +120,6 @@ class _MyWidgetState extends State<DetailedCourses> {
             "1800's",
             "history"
         ], 
-         difficulty: "hard"
       )
     );
     quizz.add(
@@ -141,7 +139,7 @@ class _MyWidgetState extends State<DetailedCourses> {
             "1800's",
             "history"
         ], 
-         difficulty: "hard"
+
       )
     );
     quizz.add(
@@ -161,7 +159,6 @@ class _MyWidgetState extends State<DetailedCourses> {
             "1800's",
             "history"
         ], 
-         difficulty: "hard"
       )
     );
     quizz.add(
@@ -181,7 +178,6 @@ class _MyWidgetState extends State<DetailedCourses> {
             "1800's",
             "history"
         ], 
-         difficulty: "hard"
       )
     );
     super.initState();
