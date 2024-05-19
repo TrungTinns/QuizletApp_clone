@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:quizlet_flashcard/views/detailed_course/detailed_course.dart';
 import 'package:quizlet_flashcard/views/settings/settings.dart';
 import 'package:quizlet_flashcard/views/login/signin.dart';
 import 'package:quizlet_flashcard/widgets/colors.dart';
@@ -135,3 +136,81 @@ Widget settingButton(BuildContext context, {IconData? icon, required Widget navi
     ),
   );
 }
+
+Widget courseWidget(BuildContext context, {required String course, bool folder = false, bool options = false}) {
+  int term = 70;
+    
+    return InkWell(
+      child: Card(
+        elevation: 4.0,
+        margin: EdgeInsets.all(16.0),
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(10.0),
+        ),
+        child: Container(
+          height: 150,
+          width: 400,
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              folder?
+              Container(
+                padding: const EdgeInsets.only(left: 16.0, right: 16, top: 8),
+                child: Icon(
+                  Icons.folder
+                )
+              ) :
+              Container(),
+              Container(
+                padding: const EdgeInsets.only(left: 16.0, right: 16, top: 8),
+                child: Text(
+                  course,
+                  style: TextStyle(
+                    fontSize: 20.0,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ),
+              
+              SizedBox(height: 8.0),
+              !folder?
+              Container(
+                padding: const EdgeInsets.only(left: 16.0, right: 16),
+                child: Text(
+                  term.toString() + " terms",
+                  style: TextStyle(
+                    fontSize: 16.0,
+                    color: Colors.grey[600],
+                  ),
+                ),
+              ) :
+              Container(),
+              SizedBox(height: 16.0),
+              ListTile(
+                leading: CircleAvatar(
+                  radius: 16,
+                ),
+                title: Text(
+                  "User",
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 14,
+                    color: Colors.black,
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ),
+        
+      ),
+      onTap: () {
+        if (!folder) {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => DetailedCourses(course: course))
+          );
+        }
+      },
+    );
+  }      
