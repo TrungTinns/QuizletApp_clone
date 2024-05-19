@@ -1,5 +1,1 @@
-<<<<<<< Updated upstream
-{"sts":[{"expiry":1747592381.531853,"host":"8/RrMmQlCD2Gsp14wUCE1P8r7B2C5+yE0+g79IPyRsc=","mode":"force-https","sts_include_subdomains":true,"sts_observed":1716056381.531864}],"version":2}
-=======
-{"sts":[{"expiry":1747618011.020565,"host":"OuKlWsMW1dkkbI1X/oi6o0Y95ZNSWnSoeaIXAEYPlv4=","mode":"force-https","sts_include_subdomains":true,"sts_observed":1716082011.020568},{"expiry":1747339021.018726,"host":"5EdUoB7YUY9zZV+2DkgVXgho8WUvp+D+6KpeUOhNQIM=","mode":"force-https","sts_include_subdomains":false,"sts_observed":1715803021.018728},{"expiry":1747587085.841921,"host":"8/RrMmQlCD2Gsp14wUCE1P8r7B2C5+yE0+g79IPyRsc=","mode":"force-https","sts_include_subdomains":true,"sts_observed":1716051085.841933}],"version":2}
->>>>>>> Stashed changes
+{"sts":[{"expiry":1747634851.779413,"host":"8/RrMmQlCD2Gsp14wUCE1P8r7B2C5+yE0+g79IPyRsc=","mode":"force-https","sts_include_subdomains":true,"sts_observed":1716098851.779448}],"version":2}
