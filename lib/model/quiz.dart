@@ -1,0 +1,10 @@
+class Quiz {
+  String id;
+  String category;
+  String question;
+  String correct_answer;
+  List<String> incorrect_answer;
+  List<String> tags;
+
+  Quiz ({required this.id, required this.category, required this.question, required this.correct_answer, required this.incorrect_answer, required this.tags});
+}
