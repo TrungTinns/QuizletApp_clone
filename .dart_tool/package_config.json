@@ -50,6 +50,12 @@
       "languageVersion": "2.12"
     },
     {
+      "name": "flip_card",
+      "rootUri": "file:///C:/Users/User/AppData/Local/Pub/Cache/hosted/pub.dev/flip_card-0.7.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
       "name": "flutter",
       "rootUri": "file:///C:/Flutter/packages/flutter",
       "packageUri": "lib/",
@@ -194,7 +200,7 @@
       "languageVersion": "3.3"
     }
   ],
-  "generated": "2024-05-19T02:26:35.221650Z",
+  "generated": "2024-05-19T02:27:30.760249Z",
   "generator": "pub",
   "generatorVersion": "3.3.4"
 }
