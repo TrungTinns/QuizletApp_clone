@@ -1,7 +1,7 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:quizlet_flashcard/components/flashcard.dart';
-import 'package:quizlet_flashcard/model/quiz/quiz.dart';
+import 'package:quizlet_flashcard/model/quiz.dart';
 import 'package:quizlet_flashcard/widgets/colors.dart';
 import 'package:quizlet_flashcard/widgets/widget.dart';
 
@@ -46,9 +46,6 @@ class _FlashCardScreenState extends State<FlashCardScreen> {
             autoPlay: false,
           ),
         ),
-        // child: PageView(
-        //   children: widget.quizz.map((e) => FlashcardWidget(context, frontContent: e.question, backContent: e.correct_answer)).toList(),
-        // ),
       ),
     );
   }

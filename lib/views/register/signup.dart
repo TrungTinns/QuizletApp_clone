@@ -29,67 +29,6 @@ class _SignUpState extends State<SignUp> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
-              const Text(
-                'QUICKLY SIGN UP WITH',
-                style: TextStyle(
-                  color: textColor,
-                  fontSize: 16,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-              Container(
-                margin: const EdgeInsets.only(top: 10),
-                child: Row(
-                  children: [
-                    Expanded(
-                      child: ElevatedButton(
-                        style: ButtonStyle(
-                          backgroundColor:
-                              MaterialStateProperty.all(Colors.white),
-                          shape:
-                              MaterialStateProperty.all<RoundedRectangleBorder>(
-                            RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(10.0),
-                            ),
-                          ),
-                        ),
-                        onPressed: (){},
-                        // onPressed: () async {
-                        //   await AuthService().googleSignUp();
-                        //   if (FirebaseAuth.instance.currentUser != null) {
-                        //     Navigator.of(context).pushNamedAndRemoveUntil(
-                        //       '/main',
-                        //       (Route<dynamic> route) => false,
-                        //     );
-                        //   }
-                        // },
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Padding(
-                              padding: const EdgeInsets.only(right: 8.0),
-                              child: Image.asset(
-                                'assets/google.png',
-                                width: 25,
-                                height: 25,
-                              ),
-                            ),
-                            const Text(
-                              'SIGN UP WITH GOOGLE',
-                              textAlign: TextAlign.center,
-                              style: TextStyle(
-                                color: Colors.black,
-                                fontWeight: FontWeight.bold,
-                                fontSize: 14,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                    )
-                  ],
-                ),
-              ),
               Container(
                 margin: const EdgeInsets.only(top: 20, bottom: 10),
                 child: const Text(
