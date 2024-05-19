@@ -1,5 +1,8 @@
+
+import 'dart:js_interop';
 import 'package:card_slider/card_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:quizlet_flashcard/model/quiz/quiz.dart';
 import 'package:quizlet_flashcard/widgets/colors.dart';
 import 'package:quizlet_flashcard/widgets/widget.dart';
 
@@ -12,10 +15,169 @@ class DetailedCourses extends StatefulWidget {
 }
 
 class _MyWidgetState extends State<DetailedCourses> {
-  
-  List<Widget> _itemsToWidget() {
-    return [Container()];
+  List<Quiz> quizz= [];
+
+  Widget _quizToWidget(Quiz quiz) {
+    List<String> answers = quiz.incorrect_answer;
+    answers.add(quiz.correct_answer);
+    answers.shuffle();
+    
+    return Container(
+      child: Card(
+        child: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Column(
+            children: [
+              Text(
+                quiz.question,
+                style: TextStyle(
+                  fontSize: 16
+                ),
+              ),
+              SizedBox(height: 8,),
+              Expanded(
+                child: Column(
+                  children: [
+                    ...answers.map((e) {
+                      return  Row(
+                        mainAxisAlignment: MainAxisAlignment.start ,
+                        children: [ 
+                          Text(
+                            e,
+                            style: TextStyle(
+                              fontSize: 16
+                            ),
+                          ),
+                        ],
+                      );
+                    })
+                  ],
+                ),
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  IconButton(
+                    onPressed: (){
+                      print("Hi");
+                    }, 
+                    icon: Icon(Icons.fullscreen)
+                  )
+                ],
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
   }
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    quizz.add(
+      Quiz(
+        id: "5f9f1b9b0e1b9c0017a5f1a5", 
+        category: "music", 
+        question:"Who was the 14th president of the USA, in term during the period 1853–1857?", 
+        correct_answer: "Franklin Pierce", 
+        incorrect_answer:  [
+            "James Buchanan",
+            "John F. Kennedy",
+            "Jimmy Carter"
+        ],
+         tags:  [
+            "presidents",
+            "usa",
+            "1800's",
+            "history"
+        ], 
+         difficulty: "hard"
+      )
+    );
+    quizz.add(
+      Quiz(
+        id: "5f9f1b9b0e1b9c0017a5f1a5", 
+        category: "music", 
+        question:"Who was the 14th president of the USA, in term during the period 1853–1857?", 
+        correct_answer: "Franklin Pierce", 
+        incorrect_answer:  [
+            "James Buchanan",
+            "John F. Kennedy",
+            "Jimmy Carter"
+        ],
+         tags:  [
+            "presidents",
+            "usa",
+            "1800's",
+            "history"
+        ], 
+         difficulty: "hard"
+      )
+    );
+    quizz.add(
+      Quiz(
+        id: "5f9f1b9b0e1b9c0017a5f1a5", 
+        category: "music", 
+        question:"Who was the 14th president of the USA, in term during the period 1853–1857?", 
+        correct_answer: "Franklin Pierce", 
+        incorrect_answer:  [
+            "James Buchanan",
+            "John F. Kennedy",
+            "Jimmy Carter"
+        ],
+         tags:  [
+            "presidents",
+            "usa",
+            "1800's",
+            "history"
+        ], 
+         difficulty: "hard"
+      )
+    );
+    quizz.add(
+      Quiz(
+        id: "5f9f1b9b0e1b9c0017a5f1a5", 
+        category: "music", 
+        question:"Who was the 14th president of the USA, in term during the period 1853–1857?", 
+        correct_answer: "Franklin Pierce", 
+        incorrect_answer:  [
+            "James Buchanan",
+            "John F. Kennedy",
+            "Jimmy Carter"
+        ],
+         tags:  [
+            "presidents",
+            "usa",
+            "1800's",
+            "history"
+        ], 
+         difficulty: "hard"
+      )
+    );
+    quizz.add(
+      Quiz(
+        id: "5f9f1b9b0e1b9c0017a5f1a5", 
+        category: "music", 
+        question:"Who was the 14th president of the USA, in term during the period 1853–1857?", 
+        correct_answer: "Franklin Pierce", 
+        incorrect_answer:  [
+            "James Buchanan",
+            "John F. Kennedy",
+            "Jimmy Carter"
+        ],
+         tags:  [
+            "presidents",
+            "usa",
+            "1800's",
+            "history"
+        ], 
+         difficulty: "hard"
+      )
+    );
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -26,14 +188,50 @@ class _MyWidgetState extends State<DetailedCourses> {
         centerTitle: true,
         elevation: 0.0,
         actions: [
-
+          IconButton(
+            icon: Icon(Icons.more_vert),
+            onPressed: () {
+              showModalBottomSheet(
+                context: context,
+                builder: (BuildContext context) {
+                  return Padding(
+                    padding: EdgeInsets.only(top:12.0),
+                    child: Wrap(
+                      children: [
+                        ListTile(
+                          leading: Icon(Icons.folder_copy_outlined),
+                          title: Text('Add to Folder'),
+                          onTap: () {},
+                        ),
+                        ListTile(
+                          leading: Icon(Icons.people_outline),
+                          title: Text('Add to Class'),
+                          onTap: () {},
+                        ),
+                        ListTile(
+                          leading: Icon(Icons.file_copy_outlined),
+                          title: Text('Save and Modify'),
+                          onTap: () {},
+                        ),
+                      ],
+                    ),
+                  );
+                },
+              );
+            },
+          ),
         ],
       ),
       backgroundColor: authThemeColor,
       body: SingleChildScrollView(
         child: Column(
           children: [
-           
+            CardSlider(
+              cards: quizz.map((e) => _quizToWidget(e)).toList(),
+              bottomOffset: .0005,
+              cardHeight: 0.75,
+              itemDotOffset: 0.25,
+            ),
             Padding(
               padding: EdgeInsets.only(left: 8.0),
               child: Align(
