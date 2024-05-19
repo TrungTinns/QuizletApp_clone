@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "547378520398",
+    "project_id": "quizlet-clone-8c1fe",
+    "storage_bucket": "quizlet-clone-8c1fe.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:547378520398:android:bbf789716e21d7a74e7e1f",
+        "android_client_info": {
+          "package_name": "com.example.quizlet_flashcard"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCwr9sxKLJr83ieKq8Z1RVUfulfNGCmILU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
