@@ -177,15 +177,6 @@ class _HomeScreenState extends State<HomeScreen> {
                     fontWeight: FontWeight.bold,
                   ),
                 ),
-                trailing: TextButton(
-                  onPressed: (){},
-                  child: Text(
-                    "View all",
-                    style: TextStyle(
-                      color: Colors.blue
-                    ),
-                  ),
-                ),
               ),
             ),
           ),
@@ -248,15 +239,6 @@ class _HomeScreenState extends State<HomeScreen> {
                     fontWeight: FontWeight.bold,
                   ),
                 ),
-              trailing: TextButton(
-                onPressed: (){},
-                child: Text(
-                  "View all",
-                  style: TextStyle(
-                    color: Colors.blue
-                  ),
-                ),
-              ),
               ),
             ),
           ),
