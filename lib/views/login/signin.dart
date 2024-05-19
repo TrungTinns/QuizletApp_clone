@@ -1,9 +1,12 @@
 // import 'package:firebase_auth/firebase_auth.dart';
 // import 'package:quizlet/services/auth.services.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:quizlet_flashcard/services/auth_service.dart';
 import 'package:quizlet_flashcard/views/forget_password.dart';
 import 'package:quizlet_flashcard/widgets/colors.dart';
 import 'package:quizlet_flashcard/widgets/qtext.dart';
+import 'package:quizlet_flashcard/widgets/squaretitle.dart';
 import 'package:quizlet_flashcard/widgets/widget.dart';
 import 'package:quizlet_flashcard/views/home/home.dart';
 import 'package:quizlet_flashcard/views/register/signup.dart';
@@ -144,60 +147,60 @@ class _SignInState extends State<SignIn> {
                           ),                          
                         ),
                         
-                        onPressed:(){
-                          Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => HomePage()));
-                        },
-                        // onPressed: () async {
-                        //   if (emailTextController.text != '' &&
-                        //       passwordTextController.text != '') {
-                        //     final emailResult = await AuthService().emailSignin(
-                        //       emailTextController.text,
-                        //       passwordTextController.text,
-                        //     );
-                        //     if (emailResult == 'user-not-found') {
-                        //       ScaffoldMessenger.of(context).showSnackBar(
-                        //         const SnackBar(
-                        //           content: QText(
-                        //             text: "User with that email doesn't exist.",
-                        //             color: Colors.white,
-                        //           ),
-                        //           behavior: SnackBarBehavior.floating,
-                        //           backgroundColor: snackBarColor,
-                        //         ),
-                        //       );
-                        //     }
-                        //     if (emailResult == 'wrong-password') {
-                        //       ScaffoldMessenger.of(context).showSnackBar(
-                        //         const SnackBar(
-                        //           content: QText(
-                        //             text: 'The password is invalid.',
-                        //             color: Colors.white,
-                        //           ),
-                        //           behavior: SnackBarBehavior.floating,
-                        //           backgroundColor: snackBarColor,
-                        //         ),
-                        //       );
-                        //     }
-                        //     if (FirebaseAuth.instance.currentUser != null &&
-                        //         mounted) {
-                        //       Navigator.of(context).pushNamedAndRemoveUntil(
-                        //         '/main',
-                        //         (Route<dynamic> route) => false,
-                        //       );
-                        //     }
-                        //   } else {
-                        //     ScaffoldMessenger.of(context).showSnackBar(
-                        //       const SnackBar(
-                        //         content: QText(
-                        //           text: 'Please fill in all fields',
-                        //           color: Colors.white,
-                        //         ),
-                        //         behavior: SnackBarBehavior.floating,
-                        //         backgroundColor: snackBarColor,
-                        //       ),
-                        //     );
-                        //   }
+                        // onPressed:(){
+                        //   Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => HomePage()));
                         // },
+                        onPressed: () async {
+                          if (emailTextController.text != '' &&
+                              passwordTextController.text != '') {
+                            final emailResult = await AuthService().emailSignin(
+                              emailTextController.text,
+                              passwordTextController.text,
+                            );
+                            if (emailResult == 'user-not-found') {
+                              ScaffoldMessenger.of(context).showSnackBar(
+                                const SnackBar(
+                                  content: QText(
+                                    text: "User with that email doesn't exist.",
+                                    color: Colors.white,
+                                  ),
+                                  behavior: SnackBarBehavior.floating,
+                                  backgroundColor: snackBarColor,
+                                ),
+                              );
+                            }
+                            if (emailResult == 'wrong-password') {
+                              ScaffoldMessenger.of(context).showSnackBar(
+                                const SnackBar(
+                                  content: QText(
+                                    text: 'The password is invalid.',
+                                    color: Colors.white,
+                                  ),
+                                  behavior: SnackBarBehavior.floating,
+                                  backgroundColor: snackBarColor,
+                                ),
+                              );
+                            }
+                            if (FirebaseAuth.instance.currentUser != null &&
+                                mounted) {
+                              Navigator.of(context).pushNamedAndRemoveUntil(
+                                '/main',
+                                (Route<dynamic> route) => false,
+                              );
+                            }
+                          } else {
+                            ScaffoldMessenger.of(context).showSnackBar(
+                              const SnackBar(
+                                content: QText(
+                                  text: 'Please fill in all fields',
+                                  color: Colors.white,
+                                ),
+                                behavior: SnackBarBehavior.floating,
+                                backgroundColor: snackBarColor,
+                              ),
+                            );
+                          }
+                        },
                         child: const Text(
                           'SIGN IN',
                           style: TextStyle(
@@ -238,11 +241,44 @@ class _SignInState extends State<SignIn> {
                       child: Text("Sign up", style: TextStyle(color: textColor, fontSize: 16, decoration: TextDecoration.underline)))
                   ],
                 ),
-                SizedBox(height: 80,)
+                SizedBox(height: 18),
+              Stack(
+                alignment: Alignment.center,
+                children: [
+                  Divider(
+                    color: textColor.withOpacity(0.5),
+                    thickness: 1,
+                  ),
+                  Container(
+                    color: authThemeColor,
+                    padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                    child: Text(
+                      "OR",
+                      style: TextStyle(color: textColor.withOpacity(0.5), fontSize: 14),
+                    ),
+                  ),
+                ],
+              ),
+              SizedBox(height: 18),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  IconButton(
+                    icon: Icon(Icons.add),
+                    color: Colors.white,
+                    onPressed: () {}
+                  ),
+                  Text(
+                    'Sign in with Google',
+                    style: TextStyle(color: textColor, fontSize: 16),
+                  ),
+                ],
+              ),
+              SizedBox(height: 80),
             ],
-          ),
-        ),
-      ),
+          )
+        )
+      )
     );
   }
 }

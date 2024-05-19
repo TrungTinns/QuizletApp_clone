@@ -38,6 +38,24 @@
       "languageVersion": "2.12"
     },
     {
+      "name": "cloud_firestore",
+      "rootUri": "file:///C:/Users/Admin/AppData/Local/Pub/Cache/hosted/pub.dev/cloud_firestore-4.17.3",
+      "packageUri": "lib/",
+      "languageVersion": "2.18"
+    },
+    {
+      "name": "cloud_firestore_platform_interface",
+      "rootUri": "file:///C:/Users/Admin/AppData/Local/Pub/Cache/hosted/pub.dev/cloud_firestore_platform_interface-6.2.3",
+      "packageUri": "lib/",
+      "languageVersion": "2.18"
+    },
+    {
+      "name": "cloud_firestore_web",
+      "rootUri": "file:///C:/Users/Admin/AppData/Local/Pub/Cache/hosted/pub.dev/cloud_firestore_web-3.12.3",
+      "packageUri": "lib/",
+      "languageVersion": "3.2"
+    },
+    {
       "name": "collection",
       "rootUri": "file:///C:/Users/Admin/AppData/Local/Pub/Cache/hosted/pub.dev/collection-1.18.0",
       "packageUri": "lib/",
@@ -308,7 +326,7 @@
       "languageVersion": "3.3"
     }
   ],
-  "generated": "2024-05-19T13:25:49.333160Z",
+  "generated": "2024-05-19T13:26:07.440582Z",
   "generator": "pub",
   "generatorVersion": "3.3.4"
 }
