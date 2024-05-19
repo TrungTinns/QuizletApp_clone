@@ -1,3 +1,9 @@
+<<<<<<< HEAD
 2024/05/19-21:04:50.703 7934 Reusing MANIFEST C:\Users\Admin\AppData\Local\Temp\flutter_tools.4830f42f\flutter_tools_chrome_device.f0523cad\Default\Session Storage/MANIFEST-000001
 2024/05/19-21:04:50.707 7934 Recovering log #3
 2024/05/19-21:04:50.715 7934 Reusing old log C:\Users\Admin\AppData\Local\Temp\flutter_tools.4830f42f\flutter_tools_chrome_device.f0523cad\Default\Session Storage/000003.log 
+=======
+2024/05/19-20:05:41.008 405c Reusing MANIFEST C:\Users\User\AppData\Local\Temp\flutter_tools.9d1f0f00\flutter_tools_chrome_device.50b51849\Default\Session Storage/MANIFEST-000001
+2024/05/19-20:05:41.206 405c Recovering log #3
+2024/05/19-20:05:41.219 405c Reusing old log C:\Users\User\AppData\Local\Temp\flutter_tools.9d1f0f00\flutter_tools_chrome_device.50b51849\Default\Session Storage/000003.log 
+>>>>>>> tin
