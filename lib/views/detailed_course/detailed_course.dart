@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:quizlet_flashcard/model/quiz/quiz.dart';
 import 'package:quizlet_flashcard/views/learning/flashcard.dart';
 import 'package:quizlet_flashcard/views/learning/quiz.dart';
+import 'package:quizlet_flashcard/views/learning/typing.dart';
 import 'package:quizlet_flashcard/widgets/colors.dart';
 import 'package:quizlet_flashcard/widgets/widget.dart';
 
@@ -21,9 +22,11 @@ class _MyWidgetState extends State<DetailedCourses> {
 
 
   Widget _quizToWidget(Quiz quiz) {
-    List<String> answers = quiz.incorrect_answer;
-    answers.add(quiz.correct_answer);
-    answers.shuffle();
+    List<String> answers = List.from(quiz.incorrect_answer);
+      if (answers.length < quiz.incorrect_answer.length + 1) {
+        answers.add(quiz.correct_answer);
+        answers.shuffle();
+      }
 
     return Container(
       child: Card(
@@ -105,7 +108,7 @@ class _MyWidgetState extends State<DetailedCourses> {
       Quiz(
         id: "5f9f1b9b0e1b9c0017a5f1a5", 
         category: "music", 
-        question:"Who was the 14th president of the USA, in term during the period 1853–1857?", 
+        question:"The now extinct species &quot;Thylacine&quot; was native to where?", 
         correct_answer: "Franklin Pierce", 
         incorrect_answer:  [
             "James Buchanan",
@@ -145,7 +148,7 @@ class _MyWidgetState extends State<DetailedCourses> {
       Quiz(
         id: "5f9f1b9b0e1b9c0017a5f1a5", 
         category: "music", 
-        question:"Who was the 14th president of the USA, in term during the period 1853–1857?", 
+        question:"What is the world&#039;s longest venomous snake?", 
         correct_answer: "Franklin Pierce", 
         incorrect_answer:  [
             "James Buchanan",
@@ -183,7 +186,7 @@ class _MyWidgetState extends State<DetailedCourses> {
     );
     super.initState();
   }
-
+  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -360,24 +363,12 @@ class _MyWidgetState extends State<DetailedCourses> {
                         fontWeight: FontWeight.bold,
                       ),
                     ),
-                    onTap: (){},
-                  ),
-                ),
-                Card(
-                  elevation: 4.0,
-                  margin: EdgeInsets.all(16.0),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(10.0),
-                  ),
-                  child: ListTile(
-                    leading: Icon(Icons.quiz, color: Colors.purpleAccent,),
-                    title: Text(
-                      "Pair Card Games",
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                    onTap: (){},
+                    onTap: (){
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => TypingScreen(quizz: quizz))
+                      );
+                    },
                   ),
                 ),
               ],

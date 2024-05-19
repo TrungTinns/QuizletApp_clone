@@ -46,9 +46,6 @@ class _FlashCardScreenState extends State<FlashCardScreen> {
             autoPlay: false,
           ),
         ),
-        // child: PageView(
-        //   children: widget.quizz.map((e) => FlashcardWidget(context, frontContent: e.question, backContent: e.correct_answer)).toList(),
-        // ),
       ),
     );
   }
