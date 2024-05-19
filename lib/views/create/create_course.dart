@@ -19,6 +19,43 @@ class _CreateCourseState extends State<CreateCourse> {
     });
   }
 
+Widget button(BuildContext context, {required String label}) {
+  return GestureDetector(
+    onTap: () {
+      
+    },
+    child: Container(
+      padding: EdgeInsets.symmetric(vertical: 2),
+      decoration: BoxDecoration(
+        color: Colors.transparent,
+        borderRadius: BorderRadius.circular(30),
+      ),
+      alignment: Alignment.center,
+      width: MediaQuery.of(context).size.width - 350,
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.start,
+        children: [
+          Padding(
+            padding: const EdgeInsets.only(right: 1),
+            child: IconButton(
+              icon: Icon(Icons.settings),
+              color: textColor,
+              onPressed: (){
+
+              },
+            ),
+          ),
+          Text(
+            label,
+            style: TextStyle(color: Colors.white, fontSize: 16),
+          ),
+        ],
+      ),
+    ),
+  );
+}
+
+
   Widget buildTermDefinitionContainer(BuildContext context) {
     return Container(
       width: MediaQuery.of(context).size.width,
@@ -148,10 +185,11 @@ class _CreateCourseState extends State<CreateCourse> {
                   child: buildTermDefinitionContainer(context),
                 );
               }).toList(),
-              SizedBox(height: 20),
+              button(context, label: "Import .CSV"),
+              SizedBox(height: 30),
               buildTermDefinitionContainer(context),
               SizedBox(height: 30),
-              blueButton(context, label: "Save", navigateTo: HomePage()),
+              saveButton(context, label: "Save"),
             ],
           ),
         ),

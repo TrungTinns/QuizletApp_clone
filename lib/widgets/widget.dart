@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:quizlet_flashcard/views/detailed_course/detailed_course.dart';
+import 'package:quizlet_flashcard/views/detailedfolder/detailfolder.dart';
 import 'package:quizlet_flashcard/views/register/signup.dart';
 import 'package:quizlet_flashcard/views/settings/settings.dart';
 import 'package:quizlet_flashcard/views/login/signin.dart';
@@ -213,11 +214,27 @@ Widget courseWidget(BuildContext context, {required String course, bool folder =
           );
         }
         else {
-           Navigator.push(
+          Navigator.push(
             context,
-            MaterialPageRoute(builder: (context) => SignUp())
+            MaterialPageRoute(builder: (context) => DetailFolder(course: course))
           );
         }
       },
     );
   }      
+
+Widget saveButton(BuildContext context,{required String label,}) {
+  return Container(
+    padding: EdgeInsets.symmetric(vertical: 18),
+    decoration: BoxDecoration(
+      color: Colors.blue,
+      borderRadius: BorderRadius.circular(30),
+    ),
+    alignment: Alignment.center,
+    width: MediaQuery.of(context).size.width - 48,
+    child: Text(
+      label,
+      style: TextStyle(color: Colors.white, fontSize: 16),
+    ),
+  );
+}

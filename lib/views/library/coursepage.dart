@@ -20,20 +20,6 @@ class _CoursePageState extends State<CoursePage> {
       body: Column(
         children: <Widget>[
           seachIcon(context, "Search courses"),
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Align(
-              alignment: Alignment.centerLeft,
-              child: Text(
-                'Courses',
-                style: TextStyle(
-                  fontSize: 20,
-                  color: textColor,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-            ),
-          ),
           Expanded(
             child: ListView.builder(
               itemCount: courses.length,
