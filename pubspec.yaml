@@ -31,11 +31,8 @@ dependencies:
   flutter:
     sdk: flutter
   table_calendar: ^3.1.1
-  card_slider: ^1.0.5
-<<<<<<< Updated upstream
   flip_card: ^0.7.0
-=======
->>>>>>> Stashed changes
+  card_slider: ^1.0.5
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.

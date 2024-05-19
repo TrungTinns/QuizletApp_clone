@@ -1,6 +1,4 @@
 class Quiz {
-<<<<<<< Updated upstream
-=======
   String id;
   String category;
   String question;
@@ -11,7 +9,4 @@ class Quiz {
 
 
   Quiz ({required this.id, required this.category, required this.question, required this.correct_answer, required this.incorrect_answer, required this.tags, required this.difficulty});
-
->>>>>>> Stashed changes
-  
 }

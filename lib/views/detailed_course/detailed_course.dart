@@ -1,8 +1,5 @@
-<<<<<<< Updated upstream
-=======
-import 'dart:js_interop';
 
->>>>>>> Stashed changes
+import 'dart:js_interop';
 import 'package:card_slider/card_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:quizlet_flashcard/model/quiz/quiz.dart';
@@ -18,13 +15,8 @@ class DetailedCourses extends StatefulWidget {
 }
 
 class _MyWidgetState extends State<DetailedCourses> {
-<<<<<<< Updated upstream
-  
-  List<Widget> _itemsToWidget() {
-    return [Container()];
-  }
-=======
   List<Quiz> quizz= [];
+
   Widget _quizToWidget(Quiz quiz) {
     List<String> answers = quiz.incorrect_answer;
     answers.add(quiz.correct_answer);
@@ -37,12 +29,42 @@ class _MyWidgetState extends State<DetailedCourses> {
           child: Column(
             children: [
               Text(
-                quiz.question
+                quiz.question,
+                style: TextStyle(
+                  fontSize: 16
+                ),
               ),
               SizedBox(height: 8,),
-              ...answers.map((e) {
-                return Text(e);
-              })
+              Expanded(
+                child: Column(
+                  children: [
+                    ...answers.map((e) {
+                      return  Row(
+                        mainAxisAlignment: MainAxisAlignment.start ,
+                        children: [ 
+                          Text(
+                            e,
+                            style: TextStyle(
+                              fontSize: 16
+                            ),
+                          ),
+                        ],
+                      );
+                    })
+                  ],
+                ),
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  IconButton(
+                    onPressed: (){
+                      print("Hi");
+                    }, 
+                    icon: Icon(Icons.fullscreen)
+                  )
+                ],
+              ),
             ],
           ),
         ),
@@ -156,7 +178,6 @@ class _MyWidgetState extends State<DetailedCourses> {
     super.initState();
   }
 
->>>>>>> Stashed changes
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -205,16 +226,12 @@ class _MyWidgetState extends State<DetailedCourses> {
       body: SingleChildScrollView(
         child: Column(
           children: [
-<<<<<<< Updated upstream
-           
-=======
             CardSlider(
               cards: quizz.map((e) => _quizToWidget(e)).toList(),
               bottomOffset: .0005,
               cardHeight: 0.75,
               itemDotOffset: 0.25,
             ),
->>>>>>> Stashed changes
             Padding(
               padding: EdgeInsets.only(left: 8.0),
               child: Align(
