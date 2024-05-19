@@ -4,11 +4,10 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:quizlet_flashcard/services/auth_service.dart';
 import 'package:quizlet_flashcard/views/forget_password.dart';
+import 'package:quizlet_flashcard/views/home/home.dart';
 import 'package:quizlet_flashcard/widgets/colors.dart';
 import 'package:quizlet_flashcard/widgets/qtext.dart';
-import 'package:quizlet_flashcard/widgets/squaretitle.dart';
 import 'package:quizlet_flashcard/widgets/widget.dart';
-import 'package:quizlet_flashcard/views/home/home.dart';
 import 'package:quizlet_flashcard/views/register/signup.dart';
 
 class SignIn extends StatefulWidget {
@@ -263,18 +262,49 @@ class _SignInState extends State<SignIn> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  IconButton(
-                    icon: Icon(Icons.add),
-                    color: Colors.white,
-                    onPressed: () {}
-                  ),
-                  Text(
-                    'Sign in with Google',
-                    style: TextStyle(color: textColor, fontSize: 16),
+                  TextButton(
+                    onPressed: () async {
+                      try {
+                        // Thực hiện đăng nhập bằng Google qua Firebase Authentication
+                        UserCredential userCredential = await FirebaseAuth.instance.signInWithPopup(
+                          GoogleAuthProvider()
+                        );
+                        
+                        // Lấy thông tin về người dùng đăng nhập
+                        User? user = userCredential.user;
+
+                        // Xử lý sau khi đăng nhập thành công, ví dụ: chuyển hướng sang màn hình chính
+                        Navigator.pushReplacement(
+                          context,
+                          MaterialPageRoute(builder: (context) => HomePage()),
+                        );
+                      } catch (e) {
+                        print('Đã xảy ra lỗi khi đăng nhập bằng Google: $e');
+                      }
+                    },
+
+                    child: Container(
+                      width: 300,
+                      height: 80,
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        mainAxisSize: MainAxisSize.min,
+                        children: <Widget>[
+                          Container(
+                            child: Image.asset(
+                              'assets/images/google_icon.png',
+                              fit: BoxFit.cover,
+                            ),
+                          ),
+                          SizedBox(width: 5.0),
+                          Text('Sign-in with Google')
+                        ],
+                      ),
+                    ),
                   ),
                 ],
               ),
-              SizedBox(height: 80),
+
             ],
           )
         )

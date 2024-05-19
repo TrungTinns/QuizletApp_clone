@@ -1,5 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:quizlet_flashcard/model/word.dart';
 
 class FirestoreService {
   Future createUserDB() async {
@@ -150,4 +151,18 @@ class FirestoreService {
         .where('name', isGreaterThanOrEqualTo: query)
         .snapshots();
   }
+
+  Future<void> addWordToFirestore(Word word) async {
+  try {
+    await FirebaseFirestore.instance.collection('words').add({
+      'id': word.id,
+      'term': word.term,
+      'definition': word.definition,
+    });
+    print('Đã thêm từ vào Firestore');
+  } catch (e) {
+    print('Lỗi khi thêm từ vào Firestore: $e');
+  }
+}
+
 }

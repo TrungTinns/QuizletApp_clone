@@ -1,8 +1,9 @@
+import 'package:quizlet_flashcard/services/firebase_options.dart';
 import 'package:quizlet_flashcard/views/home/home.dart';
 import 'package:quizlet_flashcard/views/login/signin.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
-import 'firebase_options.dart';
+
 
 void main() async{
   WidgetsFlutterBinding.ensureInitialized();

@@ -25,6 +25,9 @@ import 'package:quizlet_flashcard/utils/firestore_url.dart';
 final FirestoreService firestoreService = FirestoreService();
 
 class AuthService {
+  final FirebaseAuth _auth = FirebaseAuth.instance;
+  final GoogleSignIn googleSignIn = GoogleSignIn();
+
   Future<void> googleSignUp() async {
     try {
       final googleUser = await GoogleSignIn().signIn();
@@ -42,20 +45,41 @@ class AuthService {
     }
   }
 
-  Future<void> googleLogin() async {
+  Future<User?> signInWithGoogle() async {
     try {
-      final googleUser = await GoogleSignIn().signIn();
-      if (googleUser == null) return;
-      final googleAuth = await googleUser.authentication;
-      final authCredential = GoogleAuthProvider.credential(
-        accessToken: googleAuth.accessToken,
-        idToken: googleAuth.idToken,
-      );
-      await FirebaseAuth.instance.signInWithCredential(authCredential);
-      await firestoreService.createUserDB();
-    } on FirebaseAuthException catch (e) {
-      print(e);
+      final GoogleSignInAccount? googleSignInAccount = await googleSignIn.signIn();
+      if (googleSignInAccount != null) {
+        final GoogleSignInAuthentication googleSignInAuthentication = await googleSignInAccount.authentication;
+        final AuthCredential credential = GoogleAuthProvider.credential(
+          accessToken: googleSignInAuthentication.accessToken,
+          idToken: googleSignInAuthentication.idToken,
+        );
+
+        final UserCredential authResult = await _auth.signInWithCredential(credential);
+        final User? user = authResult.user;
+
+        // Kiểm tra tính hợp lệ của người dùng và trả về
+        if (user != null) {
+          assert(!user.isAnonymous);
+          assert(await user.getIdToken() != null);
+
+          final User? currentUser = _auth.currentUser;
+          assert(user.uid == currentUser!.uid);
+
+          return user;
+        }
+      }
+    } 
+    catch (e) {
+      print("Đã xảy ra lỗi khi đăng nhập bằng Google: $e");
     }
+    return null;
+  }
+
+
+  Future<void> signOutGoogle() async {
+    await googleSignIn.signOut();
+    print("User Signed Out");
   }
 
   Future<String> emailSignup(String name, String email, String password) async {

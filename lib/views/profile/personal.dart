@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:quizlet_flashcard/model/card.dart';
-import 'package:quizlet_flashcard/components/create.dart';
-import 'package:quizlet_flashcard/views/home/home.dart';
 import 'package:quizlet_flashcard/views/settings/settings.dart';
 import 'package:quizlet_flashcard/components/calendar.dart';
 import 'package:quizlet_flashcard/widgets/colors.dart';

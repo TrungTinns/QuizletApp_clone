@@ -1,17 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:quizlet_flashcard/views/create/create_class.dart';
-import 'package:quizlet_flashcard/views/create/create_course.dart';
-import 'package:quizlet_flashcard/views/create/create_folder.dart';
 import 'package:quizlet_flashcard/views/detailedfolder/detailfolder.dart';
-import 'package:quizlet_flashcard/views/home/home.dart';
-import 'package:quizlet_flashcard/views/library/classpage.dart';
-import 'package:quizlet_flashcard/views/library/coursepage.dart';
-import 'package:quizlet_flashcard/views/library/folderpage.dart';
 import 'package:quizlet_flashcard/views/manage/classcourse.dart';
 import 'package:quizlet_flashcard/views/manage/complete.dart';
 import 'package:quizlet_flashcard/views/manage/created.dart';
 import 'package:quizlet_flashcard/widgets/colors.dart';
-import '../../widgets/widget.dart';
 
 class ManageCourse extends StatefulWidget {
   @override

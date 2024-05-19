@@ -1,19 +1,15 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:quizlet_flashcard/model/card.dart';
-import 'package:quizlet_flashcard/components/create.dart';
 import 'package:quizlet_flashcard/views/create/create_class.dart';
 import 'package:quizlet_flashcard/views/create/create_course.dart';
 import 'package:quizlet_flashcard/views/create/create_folder.dart';
-import 'package:quizlet_flashcard/views/detailed_course/detailed_course.dart';
 import 'package:quizlet_flashcard/views/explaination/explanation.dart';
 import 'package:quizlet_flashcard/views/library/library.dart';
 import 'package:quizlet_flashcard/views/profile/personal.dart';
 import 'package:quizlet_flashcard/components/calendar.dart';
 import 'package:quizlet_flashcard/widgets/colors.dart';
 import 'package:quizlet_flashcard/widgets/widget.dart';
-import 'package:table_calendar/table_calendar.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -151,8 +147,8 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return SingleChildScrollView(
       child: Column(
+        mainAxisSize: MainAxisSize.min,
         children: <Widget>[
-          seachIcon(context, "Search..."),
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: Align(
@@ -168,7 +164,6 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
           ),
           CalendarFrame(),
-          // Courses
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: Align(
@@ -209,8 +204,6 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
           ),
           SizedBox(height: 16.0),
-          
-          // Recommendations
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: Align(
@@ -242,8 +235,6 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
           ),
           SizedBox(height: 16.0),
-          
-          // Folders
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: Align(
@@ -269,18 +260,20 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
             ),
           ),
-          Container(
-            height: 180,
-            child: ListView.builder(
-              scrollDirection: Axis.horizontal,
-              shrinkWrap: true,
-              itemCount: courses.length,
-              itemBuilder: (ct, idx) => courseWidget(
-                    context,
-                    course: courses[idx],
-                    folder: true,
-                    options: true,
-                  ),
+          Flexible(
+            child: Container(
+              height: 180,
+              child: ListView.builder(
+                scrollDirection: Axis.horizontal,
+                shrinkWrap: true,
+                itemCount: courses.length,
+                itemBuilder: (ct, idx) => courseWidget(
+                  context,
+                  course: courses[idx],
+                  folder: false,
+                  options: false,
+                ),
+              ),
             ),
           ),
           SizedBox(height: 16.0),
@@ -289,6 +282,7 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 }
+
 
 class BottomSheetWidget extends StatelessWidget {
   @override
@@ -304,7 +298,7 @@ class BottomSheetWidget extends StatelessWidget {
               style: TextStyle(color: textColor),
             ),
             onTap: () {
-              Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => CreateCourse()));
+              Navigator.push(context, MaterialPageRoute(builder: (context) => CreateCourse()));
             },
           ),
           ListTile(
@@ -313,7 +307,7 @@ class BottomSheetWidget extends StatelessWidget {
               style: TextStyle(color: textColor),
             ),
             onTap: () {
-              Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => CreateFolder()));
+              Navigator.push(context, MaterialPageRoute(builder: (context) => CreateFolder()));
             },
           ),
           ListTile(
@@ -322,7 +316,7 @@ class BottomSheetWidget extends StatelessWidget {
               style: TextStyle(color: textColor),
             ),
             onTap: () {
-              Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => CreateClass()));
+              Navigator.push(context, MaterialPageRoute(builder: (context) => CreateClass()));
             },
           ),
         ],
