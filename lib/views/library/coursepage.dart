@@ -10,51 +10,29 @@ class CoursePage extends StatefulWidget {
 }
 
 class _CoursePageState extends State<CoursePage> {
-  List<String> courses = ["1", "2", "3", "4", "5", "6"];
+  List<String> courses = ["Testing course 1", "Testing course 2", "Testing course 3", "Testing course 4", "Testing course 5", "Testing course 6"];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       resizeToAvoidBottomInset: false,
       backgroundColor: authThemeColor,
-      body: Padding(
-        padding: const EdgeInsets.all(8.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            ListTile(
-              title: Text(
-                'Courses',
-                style: TextStyle(
-                  fontSize: 20,
-                  color: textColor,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-              trailing: TextButton(
-                onPressed: (){},
-                child: Text(
-                  "View all",
-                  style: TextStyle(
-                    color: Colors.blue,
-                  ),
-                ),
+      body: Column(
+        children: <Widget>[
+          seachIcon(context, "Search courses"),
+          Expanded(
+            child: ListView.builder(
+              itemCount: courses.length,
+              itemBuilder: (ct, idx) => courseWidget(
+                context,
+                course: courses[idx],
+                folder: false,
+                options: false,
               ),
             ),
-            Expanded(
-              child: ListView.builder(
-                itemCount: courses.length,
-                itemBuilder: (ct, idx) => courseWidget(
-                    context,
-                    course: courses[idx],
-                    folder: false,
-                    options: false,
-                  ),
-              ),
-            ),
-          ],
-        ),
+          ),
+        ]
       ),
     );
   }
-
 }

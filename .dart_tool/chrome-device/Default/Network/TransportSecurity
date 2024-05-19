@@ -1,1 +1,5 @@
+<<<<<<< HEAD
+{"sts":[{"expiry":1747634851.779413,"host":"8/RrMmQlCD2Gsp14wUCE1P8r7B2C5+yE0+g79IPyRsc=","mode":"force-https","sts_include_subdomains":true,"sts_observed":1716098851.779448}],"version":2}
+=======
 {"sts":[{"expiry":1747647642.453229,"host":"OuKlWsMW1dkkbI1X/oi6o0Y95ZNSWnSoeaIXAEYPlv4=","mode":"force-https","sts_include_subdomains":true,"sts_observed":1716111642.453234},{"expiry":1747646144.381285,"host":"5EdUoB7YUY9zZV+2DkgVXgho8WUvp+D+6KpeUOhNQIM=","mode":"force-https","sts_include_subdomains":false,"sts_observed":1716110144.381288},{"expiry":1747647613.401194,"host":"8/RrMmQlCD2Gsp14wUCE1P8r7B2C5+yE0+g79IPyRsc=","mode":"force-https","sts_include_subdomains":true,"sts_observed":1716111613.401206}],"version":2}
+>>>>>>> tien
